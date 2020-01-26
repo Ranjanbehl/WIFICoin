@@ -12,6 +12,10 @@ with no mobile internet connection, you can purchase WIFI Coins to
 gain access to nearby WIFI networks. The application lists nearby
 WIFI networks that can be accessed using WIFI Coins.
 ```
+## Usage:
+```
+  App/WifiCoin is the actual project, in android studios import this folder
+```
 ## Features:
 
 I. Easily connect to local WIFI networks.
