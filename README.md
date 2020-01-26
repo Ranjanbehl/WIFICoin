@@ -14,7 +14,7 @@ WIFI networks that can be accessed using WIFI Coins.
 ```
 ## Usage:
 ```
-  App/WifiCoin is the actual project, in android studio's import this folder
+  App/WifiCoin is the actual project, import this folder in android studio
 ```
 ## Features:
 
