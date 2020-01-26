@@ -27,11 +27,11 @@ IV. Account creation is not needed, uses device IMEI for login.
 ## Figure 1 :WIFI Sharing Menu
 
 ![A screenshot of a cell phone Description automatically
-generated](./image3.png)
+generated](./App/media/image3.png)
 
 ## Figure 2 : Account Balance
 
-![](./image2.png)
+![](./App/media/image2.png)
 
 ## Permissions
 ```
