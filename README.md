@@ -38,7 +38,7 @@ generated](./App/media/image3.png)
 ![](./App/media/image2.png)
 
 ## Figure 3 : MAP with Wifi Spots(Mobile)
-![](./App/media/map.jpg =100x20)
+![](./App/media/map.jpg){height=50%}
 
 ## Permissions
 ```
