@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html  >
+<head>
+  <!-- Site made with Mobirise Website Builder v4.10.1, https://mobirise.com -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Mobirise v4.10.1, mobirise.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="shortcut icon" href="assets/images/wificoinlogo-122x138.png" type="image/x-icon">
+  <meta name="description" content="">
+  
+  <title>Home</title>
+  <link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
+  <link rel="stylesheet" href="assets/tether/tether.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
+  <link rel="stylesheet" href="assets/dropdown/css/style.css">
+  <link rel="stylesheet" href="assets/theme/css/style.css">
+  <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
+  
+  
+  
+</head>
+<body>
+  <section class="menu cid-rOD9QDapKE" once="menu" id="menu1-0">
+
+    
+
+    <nav class="navbar navbar-expand beta-menu navbar-dropdown align-items-center navbar-fixed-top navbar-toggleable-sm">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </button>
+        <div class="menu-logo">
+            <div class="navbar-brand">
+                <span class="navbar-logo">
+                    <a href="index.html">
+                         <img src="assets/images/wificoinlogo-122x138.png" alt="Mobirise" title="" style="height: 3.8rem;">
+                    </a>
+                </span>
+                <span class="navbar-caption-wrap"><a class="navbar-caption text-white display-4" href="index.html">WIFICOIN</a></span>
+            </div>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true"><li class="nav-item">
+                    <a class="nav-link link text-white display-4" href="index.html"><span class="mbri-globe-2 mbr-iconfont mbr-iconfont-btn"></span>
+                        MAP</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link link text-white display-4" href="page1.html"><span class="mbri-users mbr-iconfont mbr-iconfont-btn"></span>
+                        MY ACCOUNT&nbsp;</a>
+                </li></ul>
+            
+        </div>
+    </nav>
+</section>
+
+<section class="engine"><a href="https://mobirise.info/t">free amp templates</a></section><section class="map1 cid-rODa4Vc36v" id="map1-1">
+
+     
+
+    <div class="google-map" id = "map"></div>
+      <script>
+      var map;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 0, lng: 0},
+          zoom: 19
+        });
+      }
+    </script>
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCFJJFxFKSF2BNRUKBobn7f8s4-xiYF-MI&callback=initMap"
+              async defer></script>
+  </section>
+
+<section class="mbr-section content8 cid-rODc68xYOP" id="content8-4">
+
+    
+
+    <div class="container">
+        <div class="media-container-row title">
+            <div class="col-12 col-md-8">
+                <div class="mbr-section-btn align-center"><a class="btn btn-primary display-4" href="page2.html">ADD WIFI</a></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+  <script src="assets/web/assets/jquery/jquery.min.js"></script>
+  <script src="assets/popper/popper.min.js"></script>
+  <script src="assets/tether/tether.min.js"></script>
+  <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+  <script src="assets/smoothscroll/smooth-scroll.js"></script>
+  <script src="assets/dropdown/js/script.min.js"></script>
+  <script src="assets/touchswipe/jquery.touch-swipe.min.js"></script>
+  <script src="assets/theme/js/script.js"></script>
+  <script>
+    var markerarray = [];
+    var visited = [];
+    var infowindows = [];
+
+    function pollMapData() {
+        var mapdata = Wrapper.getMapData();
+        points = JSON.parse(mapdata);
+
+        for (i = 0; i < points.length; i++) {
+            if (visited.indexOf(points[i]) == -1) {
+
+                var mk = new google.maps.Marker({
+                position: new google.maps.LatLng(points[i]["LAT"], points[i]["LON"]),
+                map: map,
+                label : "SSID: " + points[i]["SSID"] + " PASSWORD: " + points[i]["PASSWORD"]
+                });
+                visited.push(points[i]);
+                markerarray.push(mk);
+
+
+
+            }
+        }
+    }
+
+    setInterval(function() {
+        Wrapper.loadWifi();
+    }, 2500);
+
+    setInterval(function() {
+        pollMapData();
+    }, 2500);
+
+    function showPosition(position) {
+    //alert("Al");
+    map.setCenter({lat:position.coords.latitude, lng:position.coords.longitude});
+    Wrapper.updateLoc(position.coords.latitude, position.coords.longitude, position.coords.altitude);
+    pollMapData();
+
+    //alert("Latitude: " + position.coords.latitude + "Longitude: " + position.coords.longitude + "Altitude: " + position.coords.altitude);
+    }
+
+function showError(error) {
+  switch(error.code) {
+    case error.PERMISSION_DENIED:
+      alert("User denied the request for Geolocation.");
+      break;
+    case error.POSITION_UNAVAILABLE:
+      alert("Location information is unavailable.");
+      break;
+    case error.TIMEOUT:
+      alert("The request to get user location timed out.");
+      break;
+    case error.UNKNOWN_ERROR:
+      alert("An unknown error occurred.");
+      break;
+  }
+}
+
+        function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition, showError);
+  } else {
+    alert("Geolocation is not supported by this browser.");
+  }
+}
+
+getLocation();
+Wrapper.auth();
+Wrapper.loadWifi();
+
+
+    </script>
+
+
+</body>
+</html>

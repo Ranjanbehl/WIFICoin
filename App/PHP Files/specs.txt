@@ -1,0 +1,17 @@
+Input Request
+
+{
+	"IMEI" : "",
+	"TYPE" : "AUTH / BALANCEQ / BUY / EDIT / LOAD",
+	"COORD" : {"LON":0.00, "LAT":0.00, "ALT":0.00},
+	"WIFI" : {"ID", "SSID":"", "PASS":"", "COMMENT":""},
+	"RAD" : 400
+}
+
+Output Request
+
+{
+	"SUCCESS": true,
+	"WIFIS" : [{}],
+	"BALANCE" : 0
+}
