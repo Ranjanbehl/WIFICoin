@@ -3,7 +3,7 @@
 Ranjan Behl, Haowei Shi, Neel Sangani, Viranch Bateriwala
 ```
 ![A close up of a map Description automatically
-generated](./image1.png)
+generated](./App/media/image1.png)
 ## About:
 ```
 WIFICOIN is a new way to share WIFI with those around you in an
