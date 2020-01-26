@@ -53,7 +53,7 @@ On Android versions prior to Android 7.0, WIFICoin requires the following permis
 ```
 OS: Android 7.0 or higher
 Frontend: Android studios with Mobirise using JS
-Backend: php with MySQL using phpMyAdmin
+Backend: PHP with MySQL using phpMyAdmin
 APIs: Google Maps, custom-made php API for server-side
 integration
 ```
