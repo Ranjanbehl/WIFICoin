@@ -38,7 +38,7 @@ generated](./App/media/image3.png)
 ![](./App/media/image2.png)
 
 ## Figure 3 : MAP with Wifi Spots(Mobile)
-<img src="https://github.com/Ranjanbehl/WIFICoin/App/media/map.jpg" alt="" width="100" height="100">
+<img src="https://github.com/Ranjanbehl/WIFICoin/App/media/map.jpg" alt="" width="100" height="1000">
 ## Permissions
 ```
 On Android versions prior to Android 7.0, WIFICoin requires the following permissions:
