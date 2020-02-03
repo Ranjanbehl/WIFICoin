@@ -4,7 +4,7 @@
 
     'May all of our dreams come true' - Love Live, 2010.
 
-    RIP HARAMBE ~ 5/31/2016
+    RIP HARAMBE ~ 5/28/2016
 
 
  */
